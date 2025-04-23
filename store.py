@@ -12,7 +12,8 @@ class MandN(Snack):
 class Scootles(Snack):
     def __init__(self):
         self.name = "Scootles"
-    
+
+
 #Drinks
 class Drink(ABC):
     def __init__(self, price):
@@ -25,3 +26,10 @@ class MrPepper(Drink):
 class Brite(Drink):
     def __init__(self):
         self.name = "Brite"
+
+
+#Generate store inventory
+class Stock():
+    def __init__(self):
+        self.goods = []
+        self.goods_list = [MandN(), Scootles(), MrPepper(), Brite()]
