@@ -33,3 +33,9 @@ class Stock():
     def __init__(self):
         self.goods = []
         self.goods_list = [MandN(), Scootles(), MrPepper(), Brite()]
+        
+    def generate_stock(self):
+        for good in self.goods_list:
+            for i in range(2):
+                self.goods.append(good)
+        return self.goods
