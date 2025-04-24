@@ -1,0 +1,50 @@
+@startuml
+abstract class Snack {
+  +price: int
+  +__init__(price: int)
+}
+
+abstract class Drink {
+  +price: int
+  +__init__(price: int)
+}
+
+class MandN {
+  +name: "MandN"
+  +__init__()
+}
+
+class Scootles {
+  +name: "Scootles"
+  +__init__()
+}
+
+class MrPepper {
+  +name: "MrPepper"
+  +__init__()
+}
+
+class Brite {
+  +name: "Brite"
+  +__init__()
+}
+
+class Stock {
+  +goods: list
+  +goods_list: [MandN(), Scootles(), MrPepper(), Brite()]
+  +__init__()
+  +generate_stock(): goods[]
+}
+
+MandN --|> Snack
+Scootles --|> Snack
+MrPepper --|> Drink
+Brite --|> Drink
+
+Stock --> MandN
+Stock --> Scootles
+Stock --> MrPepper
+Stock --> Brite
+
+
+@enduml
