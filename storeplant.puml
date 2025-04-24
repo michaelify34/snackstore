@@ -41,10 +41,10 @@ Scootles --|> Snack
 MrPepper --|> Drink
 Brite --|> Drink
 
-Stock --> MandN
-Stock --> Scootles
-Stock --> MrPepper
-Stock --> Brite
+Stock *-- MandN
+Stock *-- Scootles
+Stock *-- MrPepper
+Stock *-- Brite
 
 
 @enduml
