@@ -2,8 +2,7 @@ from abc import ABC, abstractmethod
 
 #Snacks
 class Snack(ABC):
-    def __init__(self, price):
-        self.price = price
+    pass
 
 class MandN(Snack):
     def __init__(self):
@@ -16,8 +15,7 @@ class Scootles(Snack):
 
 #Drinks
 class Drink(ABC):
-    def __init__(self, price):
-        self.price = price
+    pass
 
 class MrPepper(Drink):
     def __init__(self):
@@ -39,3 +37,8 @@ class Stock():
             for i in range(2):
                 self.goods.append(good)
         return self.goods
+
+class User():
+    def __init__(self):
+        pass
+
