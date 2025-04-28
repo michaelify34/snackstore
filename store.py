@@ -42,3 +42,9 @@ class User():
     def __init__(self):
         pass
 
+
+
+s = Stock()
+s.generate_stock()
+for good in s.goods:
+    print(good.name)
