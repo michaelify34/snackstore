@@ -7,10 +7,12 @@ class Snack(ABC):
 class MandN(Snack):
     def __init__(self):
         self.name = "M&N"
-
+        self.price = 1.50
+        
 class Scootles(Snack):
     def __init__(self):
         self.name = "Scootles"
+        self.price = 1.50
 
 
 #Drinks
@@ -20,10 +22,12 @@ class Drink(ABC):
 class MrPepper(Drink):
     def __init__(self):
         self.name = "MrPepper"
+        self.price = 2
 
 class Brite(Drink):
     def __init__(self):
         self.name = "Brite"
+        self.price = 2
 
 
 #Generate store inventory
@@ -47,4 +51,4 @@ class User():
 s = Stock()
 s.generate_stock()
 for good in s.goods:
-    print(good.name)
+    print(f"{good.name}, ${good.price}")
