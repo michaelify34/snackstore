@@ -9,10 +9,26 @@ class MandN(Snack):
         self._name = "M&N"
         self._price = 1.50
 
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def price(self):
+        return self._price
+
 class Scootles(Snack):
     def __init__(self):
         self._name = "Scootles"
         self._price = 1.50
+
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def price(self):
+        return self._price
 
 
 #Drinks
@@ -24,10 +40,26 @@ class MrPepper(Drink):
         self._name = "MrPepper"
         self._price = 2
 
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def price(self):
+        return self._price
+
 class Brite(Drink):
     def __init__(self):
         self._name = "Brite"
         self._price = 2
+
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def price(self):
+        return self._price
 
 
 #Generate store inventory
@@ -50,5 +82,5 @@ class User():
 
 s = Stock()
 s.generate_stock()
-for good in s.goods:
-    print(f"{good._name}, ${good._price}")
+for i, good in enumerate(s.goods):
+    print(f"{good.name}, ${good.price}, id: {i}")
