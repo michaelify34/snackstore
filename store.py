@@ -81,14 +81,18 @@ class User():
 
     @property
     def get_balance(self):
-        return self._balance
+        return (f"Balance: ${self._balance}")
     
     def buy_item(self, item):
         self._items.append(item)
+        self._balance -= item.price
+
 
 
 
 s = Stock()
+u = User()
 s.generate_stock()
+print(u.get_balance)
 for i, good in enumerate(s.goods):
     print(f"{good.name}, ${good.price}, id: {i}")
