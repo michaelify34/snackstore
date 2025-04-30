@@ -87,12 +87,26 @@ class User():
         self._items.append(item)
         self._balance -= item.price
 
+class Menu():
+    @staticmethod
+    def store_run():
+        (print("_____ Welcome to Michael's snack store! _____"),
+    print("""
+        To View Available Items: V 
+   $$$ To Buy Item: input item code $$$
+        To View Your Owned Items: E 
+            !!! To Exit: Q !!!
+            """))
+        
 
 
+# s = Stock()
+# u = User()
+# s.generate_stock()
+# print(u.get_balance)
+# for i, good in enumerate(s.goods):
+#     print(f"{good.name}, ${good.price}, id: {i}")
 
-s = Stock()
-u = User()
-s.generate_stock()
-print(u.get_balance)
-for i, good in enumerate(s.goods):
-    print(f"{good.name}, ${good.price}, id: {i}")
+if __name__ == "__main__":
+
+    Menu.store_run()
