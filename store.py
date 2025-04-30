@@ -104,7 +104,7 @@ class Menu():
     #Visualizes interface to allow user interactivity
     @staticmethod
     def store_run():
-        (print("_____ Welcome to Michael's snack store! _____"),
+        (print("\n_____ Welcome to Michael's snack store! _____"),
     print("""
         To View Available Items: V 
    $$$ To Buy Item: input item code $$$
