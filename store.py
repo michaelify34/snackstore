@@ -70,8 +70,7 @@ class Stock():
         
     def generate_stock(self):
         for good in self.goods_list:
-            for i in range(2):
-                self.goods.append(good)
+            self.goods.append(good)
         return self.goods
 
 class User():
@@ -83,9 +82,17 @@ class User():
     def get_balance(self):
         return (f"Balance: ${self._balance}")
     
+    @property
+    def get_items(self):
+        return self._items
+    
     def buy_item(self, item):
-        self._items.append(item)
-        self._balance -= item.price
+        if (self._balance - item.price) < 0:
+            print("Insufficient funds")
+            exit
+        else:
+            self._balance -= item.price
+            self._items.append(item)
 
 class Menu():
     @staticmethod
@@ -94,19 +101,42 @@ class Menu():
     print("""
         To View Available Items: V 
    $$$ To Buy Item: input item code $$$
-        To View Your Owned Items: E 
+        To View Your Owned Items: E
+         To View Your Balance: B
             !!! To Exit: Q !!!
             """))
-        
 
 
-# s = Stock()
 # u = User()
-# s.generate_stock()
 # print(u.get_balance)
-# for i, good in enumerate(s.goods):
-#     print(f"{good.name}, ${good.price}, id: {i}")
 
 if __name__ == "__main__":
+    s = Stock()
+    s.generate_stock()
+    u = User()
 
-    Menu.store_run()
+    loop = True
+    while loop == True:
+        Menu.store_run()
+        user_selection = str(input("Selection: "))
+
+        if user_selection == "Q":
+            print("Thank you for visiting Michael's snack store!")
+            loop = False
+        elif user_selection == "V":
+            for i, good in enumerate(s.goods):
+                print(f"{good.name}, ${good.price}, id: {i}")
+        elif user_selection == "B":
+            print(u.get_balance)
+        elif user_selection.isnumeric():
+            u.buy_item(s.goods[int(user_selection)])
+        elif user_selection == "E":
+            if len(u._items) == 0:
+                print("You haven't bought anything yet!")
+            else:
+                itemlist = []
+                for item in u.get_items:
+                    itemlist.append(item.name)
+                print(f"Items: {', '.join(_ for _ in itemlist)}")
+        else:
+            print("Please make a valid selection.")
