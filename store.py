@@ -79,7 +79,12 @@ class User():
         self._balance = 10
         self._items = []
 
-
+    @property
+    def get_balance(self):
+        return self._balance
+    
+    def buy_item(self, item):
+        self._items.append(item)
 
 
 
