@@ -99,8 +99,9 @@ class User():
             self._balance -= item.price
             self._items.append(item)
 
-#Visualizes interface to allow user to interact
+#Shell class for static method
 class Menu():
+    #Visualizes interface to allow user interactivity
     @staticmethod
     def store_run():
         (print("_____ Welcome to Michael's snack store! _____"),
