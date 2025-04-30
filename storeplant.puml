@@ -1,32 +1,52 @@
 @startuml
 abstract class Snack {
-  +price: int
-  +__init__(price: int)
 }
 
 abstract class Drink {
-  +price: int
-  +__init__(price: int)
 }
 
 class MandN {
-  +name: "MandN"
+  -name: str
+  -price: int
+  __
   +__init__()
+  .. Name Getter ..
+  +name(): name
+  .. Price Getter ..
+  +price(): price
 }
 
 class Scootles {
-  +name: "Scootles"
+  -name: str
+  -price: int
+  __
   +__init__()
+  .. Name Getter ..
+  +name(): name
+  .. Price Getter ..
+  +price(): price
 }
 
 class MrPepper {
-  +name: "MrPepper"
+  -name: str
+  -price: int
+  __
   +__init__()
+  .. Name Getter ..
+  +name(): name
+  .. Price Getter ..
+  +price(): price
 }
 
 class Brite {
-  +name: "Brite"
+  -name: str
+  -price: int
+  __
   +__init__()
+  .. Name Getter ..
+  +name(): name
+  .. Price Getter ..
+  +price(): price
 }
 
 class Stock {
@@ -34,6 +54,22 @@ class Stock {
   +goods_list: [MandN(), Scootles(), MrPepper(), Brite()]
   +__init__()
   +generate_stock(): goods[]
+}
+
+class User {
+  -balance: int
+  -items: list
+  +__init__()
+  __
+  +buy_item(item: obj)
+  .. Balance Getter ..
+  +get_balance(): balance
+  .. Items Getter ..
+  +get_items(): items
+}
+
+class Menu {
+  {static} store_run(): string
 }
 
 MandN --|> Snack
