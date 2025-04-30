@@ -76,7 +76,10 @@ class Stock():
 
 class User():
     def __init__(self):
-        pass
+        self._balance = 10
+        self._items = []
+
+
 
 
 
